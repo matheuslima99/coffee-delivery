@@ -3,8 +3,10 @@ import styled, { css } from "styled-components";
 export const HeaderContainer = styled.header`
   width: 100%;
   height: 6.5rem;
-  padding: 2rem 10em;
   background: ${({ theme }) => theme.colors["base-background"]};
+  
+  display: flex;
+  align-items: center;
 
   & > div {
     display: flex;
