@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  border-style, input-security, textarea, button {
+  body, input-security, textarea, button {
     font-family: ${({ theme }) => theme.fonts.regular};
     font-size: ${({ theme }) => theme.textSizes["text-regular-m"]};
     font-weight: 400;
