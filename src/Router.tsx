@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import { Home } from "./pages/Home";
-import { Checkout } from "./pages/Checkout";
+import { CompleteOrder } from "./pages/CompleteOrder";
 import { DefaultLayout } from "./layouts/DefaultLayout";
 
 export function Router() {
@@ -9,7 +9,7 @@ export function Router() {
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
         <Route path="/" element={<Home />} />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout" element={<CompleteOrder />} />
       </Route>
     </Routes>
   );

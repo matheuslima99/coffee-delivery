@@ -4,7 +4,10 @@ export const HeaderContainer = styled.header`
   width: 100%;
   height: 6.5rem;
   background: ${({ theme }) => theme.colors["base-background"]};
-  
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
   display: flex;
   align-items: center;
 
