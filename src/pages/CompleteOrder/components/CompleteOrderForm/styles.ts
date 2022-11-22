@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CompleteOrderFormContainer = styled.form``;
+export const CompleteOrderFormContainer = styled.div``;
 
 export const SectionBaseStyle = styled.div`
   width: 100%;
