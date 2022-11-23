@@ -5,4 +5,5 @@ export const CompleteOrderContainer = styled.form`
   display: flex;
   justify-content: space-between;
   gap: 2rem;
+  padding-bottom: 10rem;
 `;

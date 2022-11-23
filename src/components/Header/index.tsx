@@ -22,7 +22,7 @@ export function Header() {
             Porto Alegre, RS
           </HeaderButton>
 
-          <NavLink to="/checkout">
+          <NavLink to="/completeOrder">
             <HeaderButton variant="yellow">
               <ShoppingCart size={22} weight="fill" />
             </HeaderButton>
