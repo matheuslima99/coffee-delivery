@@ -40,10 +40,31 @@ export const HeaderButton = styled.button<HeaderButtonProps>`
   border-radius: 6px;
   border: none;
   position: relative;
+  cursor: inherit;
+
+  & > span {
+    width: 1.25rem;
+    height: 1.25rem;
+    position: absolute;
+    top: calc(-1.25rem / 2);
+    right: calc(-1.25rem / 2);
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 50%;
+    color: ${({ theme }) => theme.colors["base-background"]};
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   ${({ variant, theme }) => css`
     background: ${theme.colors[`brand-${variant}-light`]};
     color: ${theme.colors[`brand-${variant}-dark`]};
+
+    span {
+      background: ${theme.colors[`brand-${variant}-dark`]};
+    }
   `}
 
   ${({ variant, theme }) =>
