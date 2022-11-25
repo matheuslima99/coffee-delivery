@@ -18,7 +18,8 @@ export const OrderConfirmedContainer = styled.div`
 `;
 
 export const OrderDetailsContainer = styled.div`
-  min-width: 32.875rem;
+  max-width: 32.875rem;
+  width: 100%;
   padding: 2.5rem;
   border-radius: 6px 36px 6px 36px;
   position: relative;
@@ -38,6 +39,6 @@ export const OrderDetailsContainer = styled.div`
   }
 
   strong {
-    color: ${({theme}) => theme.colors["base-text"]};
+    color: ${({ theme }) => theme.colors["base-text"]};
   }
 `;
