@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useState } from "react";
 import { Coffee } from "../pages/Home/components/CoffeeCard";
 
-interface CartItem extends Coffee {
+export interface CartItem extends Coffee {
   quantity: number;
 }
 
@@ -9,6 +9,10 @@ interface CartContextType {
   cartQuantity: number;
   cartItems: CartItem[];
   addCoffeeToCart: (coffee: CartItem) => void;
+  changeCartItemQuantity: (
+    cartItemId: number,
+    type: "increase" | "decrease"
+  ) => void;
 }
 
 interface CartContextProviderProps {
@@ -37,10 +41,42 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     }
   }
 
-  console.log(cartItems);
+  function changeCartItemQuantity(
+    cartItemId: number,
+    type: "increase" | "decrease"
+  ) {
+    const cartList = cartItems.map((item) => {
+      if (item.id === cartItemId) {
+        switch (type) {
+          case "increase":
+            return {
+              ...item,
+              quantity: item.quantity + 1,
+            };
+
+          case "decrease":
+            return {
+              ...item,
+              quantity: item.quantity - 1,
+            };
+        }
+      }
+
+      return item;
+    });
+
+    setCartItems(cartList);
+  }
 
   return (
-    <CartContext.Provider value={{ cartQuantity, cartItems, addCoffeeToCart }}>
+    <CartContext.Provider
+      value={{
+        cartQuantity,
+        cartItems,
+        addCoffeeToCart,
+        changeCartItemQuantity,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
