@@ -45,6 +45,7 @@ export function AddressForm() {
         placeholder="Complemento"
         className="complement"
         {...register("complement")}
+        rightText="Opcional"
       />
 
       <Input
